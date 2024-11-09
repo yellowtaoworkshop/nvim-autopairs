@@ -56,7 +56,7 @@ local function setup(opt)
             :with_pair(cond.not_before_regex("%w")),
         quote("'", "'", "rust"):with_pair(cond.not_before_regex("[%w<&]")):with_pair(cond.not_after_text(">")),
         Rule("''", "''", 'nix'):with_move(cond.after_text("'")),
-        quote("`", "`"),
+        quote("`", "`", "-systemverilog"),
         quote('"', '"', "-vim"),
         quote('"', '"', "vim"):with_pair(cond.not_before_regex("^%s*$", -1)),
         bracket("(", ")"),
